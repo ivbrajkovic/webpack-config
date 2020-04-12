@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@root/*": ["./*"],
+      "@db/*": ["./db/*"],
+      "@api/*": ["./api/*"],
+      "@routes/*": ["./api/routes/*"]
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "arduino-sensors-v2",
+  "name": "webpack-config",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -11,22 +11,25 @@
     "server:dev": "nodemon server",
     "server:debug": "nodemon --inspect server"
   },
-  "nodemonConfig": {
-    "watch": [
-      "backend/",
-      "util/",
-      "db/",
-      "server.js"
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  ,
+  "nodemonConfig": {
+    "watch": [
+      ".",
+      "bin",
+      "routes",
+      "views"
+    ],
+    "delay": "1000"
+  },
   "dependencies": {
+    "module-alias": "^2.2.2",
+    "http-errors": "~1.6.2",
     "bcrypt": "^4.0.1",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
-    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
@@ -36,6 +39,7 @@
     "sqlite-async": "^1.0.12"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.1",
@@ -54,5 +58,11 @@
     "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@db": "db",
+    "@api": "api",
+    "@routes": "api/routes"
   }
 }
