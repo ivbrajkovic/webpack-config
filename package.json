@@ -1,0 +1,58 @@
+{
+  "name": "arduino-sensors-v2",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "client:dev": "webpack-dev-server --env.NODE_ENV=development --env.mode=development --config webpack.config.js --open",
+    "client:analyze": "webpack --env.mode=production --env.analyze --config webpack.config.js",
+    "client:build": "webpack --env.mode=production --config webpack.config.js",
+    "server:dev": "nodemon server",
+    "server:debug": "nodemon --inspect server"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "backend/",
+      "util/",
+      "db/",
+      "server.js"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "preact": "^10.3.4",
+    "react-router-dom": "^5.1.2",
+    "socket.io": "^2.3.0",
+    "sqlite-async": "^1.0.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.1",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.42.0",
+    "webpack-bundle-analyzer": "^3.6.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
